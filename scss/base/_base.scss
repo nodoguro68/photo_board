@@ -3,11 +3,14 @@ body{
     line-height: 1.5;
     color: #000;
     background: white;
+    width: 100%;
+    font-family: serif;
 }
 .container{
     max-width: 980px;
     margin: 0 auto;
     padding: 20px;
+    min-height: 600px;
 }
 .page-title{
     font-size: 30px;
