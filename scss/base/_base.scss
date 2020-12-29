@@ -4,7 +4,7 @@ body{
     color: #000;
     background: white;
     width: 100%;
-    font-family: serif;
+    // font-family: serif;
 }
 .container{
     max-width: 980px;
@@ -12,6 +12,7 @@ body{
     padding: 20px;
     min-height: 600px;
 }
-.page-title{
+.main-header{
+    text-align: center;
     font-size: 30px;
 }
