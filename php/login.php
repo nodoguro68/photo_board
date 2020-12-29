@@ -43,7 +43,7 @@
                     <span class="err-msg"></span>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">パスワード</label>
+                    <label class="form-label">パスワード<span class="note">半角英数字8文字以上で入力してください</span></label>
                     <input type="password" name="pass" class="form-input">
                     <span class="err-msg"></span>
                 </div>
