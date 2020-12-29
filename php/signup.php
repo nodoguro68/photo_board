@@ -33,27 +33,30 @@
     <main class="main">
         <div class="container">
 
-            <h2 class="page-title">ユーザー登録</h2>
-            
             <!-- フォーム -->
             <form method="POST" class="form">
-                <div class="form-group">
-                    <label class="form-label">メールアドレス</label>
-                    <input type="text" name="email" class="form-input">
-                    <span class="err-msg"></span>
+                <div class="form-header">
+                    <h2 class="form-title">ユーザー登録</h2>
                 </div>
-                <div class="form-group">
-                    <label class="form-label">パスワード<span class="note">半角英数字8文字以上で入力してください</span></label>
-                    <input type="password" name="pass" class="form-input">
-                    <span class="err-msg"></span>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">パスワード（再入力）</label>
-                    <input type="password" name="pass_re" class="form-input">
-                    <span class="err-msg"></span>
-                </div>
-                <div class="form-group-btn">
-                    <input type="submit" value="登録">
+                <div class="form-main">
+                    <div class="form-group">
+                        <label class="form-label">メールアドレス</label>
+                        <input type="text" name="email" class="form-input">
+                        <span class="err-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
+                        <input type="password" name="pass" class="form-input">
+                        <span class="err-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">パスワード（再入力）</label>
+                        <input type="password" name="pass_re" class="form-input">
+                        <span class="err-msg"></span>
+                    </div>
+                    <div class="form-group-btn">
+                        <input type="submit" value="登録" class="btn-submit">
+                    </div>
                 </div>
             </form>
 

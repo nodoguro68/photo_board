@@ -32,23 +32,26 @@
 
     <main class="main">
         <div class="container">
-
-            <h2 class="page-title">ログイン</h2>
             
             <!-- フォーム -->
             <form method="POST" class="form">
-                <div class="form-group">
-                    <label class="form-label">メールアドレス</label>
-                    <input type="text" name="email" class="form-input">
-                    <span class="err-msg"></span>
+                <div class="form-header">
+                    <h2 class="form-title">ログイン</h2>
                 </div>
-                <div class="form-group">
-                    <label class="form-label">パスワード<span class="note">半角英数字8文字以上で入力してください</span></label>
-                    <input type="password" name="pass" class="form-input">
-                    <span class="err-msg"></span>
-                </div>
-                <div class="form-group-btn">
-                    <input type="submit" value="ログイン">
+                <div class="form-main">
+                    <div class="form-group">
+                        <label class="form-label">メールアドレス</label>
+                        <input type="text" name="email" class="form-input">
+                        <span class="err-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
+                        <input type="password" name="pass" class="form-input">
+                        <span class="err-msg"></span>
+                    </div>
+                    <div class="form-group-btn">
+                        <input type="submit" value="ログイン" class="btn-submit">
+                    </div>
                 </div>
             </form>
 
