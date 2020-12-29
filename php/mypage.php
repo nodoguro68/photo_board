@@ -40,8 +40,8 @@
                 <form method="POST" class="sort-form">
                     <div class="form-group">
                         <select name="sort" id="" class="select">
-                            <option value="">新しい順</option>
-                            <option value="">古い順</option>
+                            <option value="">日付の新しい順</option>
+                            <option value="">日付の古い順</option>
                         </select>
                     </div>
                 </form>
@@ -58,6 +58,10 @@
                         </div>
                     </a>
                 </div>
+            </div>
+
+            <div class="post-photo-link">
+                <a href="post_photo.php" class="post-photo-link-btn"></a>
             </div>
 
         </div>
