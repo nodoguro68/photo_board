@@ -1,0 +1,37 @@
+.header{
+    background:  lightblue;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    .header-container{
+        max-width: 980px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0 20px;
+    }
+}
+
+.header-logo{
+    float: left;
+    h1{
+        font-size: 20px;
+    }
+}
+
+.header-nav{
+    float: right;
+    .header-nav-menu{
+        display: flex;
+        .header-nav-menu-item{
+            margin-right: 15px;
+            .header-nav-menu-item-link{
+                display: block;
+                padding: 0 10px;
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
