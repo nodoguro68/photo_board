@@ -18,7 +18,7 @@
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
-                <h1></h1>
+                <h1><a href="index.php">ロゴ</a></h1>
             </div>
 
             <nav class="header-nav">
