@@ -5,6 +5,7 @@ body{
     background: white;
     width: 100%;
     // font-family: serif;
+    position: relative;
 }
 .container{
     max-width: 980px;
@@ -16,9 +17,27 @@ body{
     text-align: center;
     font-size: 30px;
 }
+.section{
+    margin-bottom: 50px;
+}
 .section-header{
-    padding: 30px 0;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 .page-title{
     font-size: 30px;
+}
+
+.post-photo-link{
+    position: fixed;
+    right: 300px;
+    bottom: 150px;
+    .post-photo-link-btn{
+        border: 1px solid #000;
+        padding: 30px;
+        background: #eee;
+        border-radius: 50%;
+    }
 }
