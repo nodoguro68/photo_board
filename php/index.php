@@ -45,130 +45,164 @@
                         </a>
                         <a href="" class="card-link">
                             <div class="card-head">
-                                <img src="../img/arashiyama.jpg" alt="" class="card-img">
+                                <img src="../img/arashiyama.jpg" alt="" class="card-img">  
                             </div>
                             <div class="card-foot">
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title">tttt</h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/ginzanonsen.jpeg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/gunkanzima.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/hirosakizyo.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/hushimiinaritaisha.jpeg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/kiyomizudera.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/mtfuji.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/nabegataki.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/takedazyo.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/tokyotower.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/tottorisakyu.jpg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
                     </div>
                     <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
                         <a href="" class="card-link">
                             <div class="card-head">
                                 <img src="../img/tunoshimaoohashi.jpeg" alt="" class="card-img">
                             </div>
                             <div class="card-foot">
-                                <span class="card-date"></span>
+                                <span class="card-account">@dddd</span>
                                 <h3 class="card-title"></h3>
                             </div>
                         </a>
