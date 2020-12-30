@@ -33,25 +33,155 @@
     <main class="main">
         <div class="container">
 
-            <h2 class="page-title">投稿一覧</h2>
-            
-            <div class="card-wrap">
-                <div class="card">
-                    <a href="" class="card-link">
-                        <div class="card-head">
-                            <img src="" alt="" class="card-img">
-                        </div>
-                        <div class="card-foot">
-                            <span class="card-comment"></span>
-                        </div>
-                    </a>
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="page-title">投稿一覧</h2>
                 </div>
-            </div>
+                
+                <div class="card-wrap">
+                    <div class="card">
+                        <a href="" class="card-date">
+                            2020/5/22
+                        </a>
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/arashiyama.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <h3 class="card-title">tttt</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/ginzanonsen.jpeg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/gunkanzima.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/hirosakizyo.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/hushimiinaritaisha.jpeg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/kiyomizudera.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/mtfuji.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/nabegataki.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/takedazyo.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/tokyotower.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/tottorisakyu.jpg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="" class="card-link">
+                            <div class="card-head">
+                                <img src="../img/tunoshimaoohashi.jpeg" alt="" class="card-img">
+                            </div>
+                            <div class="card-foot">
+                                <span class="card-date"></span>
+                                <h3 class="card-title"></h3>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+    
+                <div class="post-photo-link">
+                    <a href="post_photo.php" class="post-photo-link-btn">＋</a>
+                </div>
 
-            <div class="post-photo-link">
-                <a href="post_photo.php" class="post-photo-link-btn"></a>
-            </div>
-
+            </section>
+            
         </div>
     </main>
 
