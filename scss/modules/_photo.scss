@@ -1,0 +1,33 @@
+.photo{
+    max-width: 500px;
+    margin: 30px auto 0;
+    min-height: 600px;
+    .photo-header{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        .photo-date{
+            display: block;
+        }
+        .photo-account-name{
+            display: block;
+        }
+    }
+    .photo-main{
+        margin-top: 10px;
+        width: 100%;
+        .photo-img{
+            width: 100%;
+            height: 300px;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+    .photo-comment{
+        display: block;
+        padding: 20px;
+        background: #eee;
+        width: 100%;
+        min-height: 200px;
+        border-radius: 0 0 5px 5px;
+    }
+}
