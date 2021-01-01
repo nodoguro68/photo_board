@@ -32,19 +32,17 @@
 
     <main class="main">
         <div class="container">
-
-            <h2 class="page-title">新規投稿</h2>
             
-            <div class="photo-wrap">
+            <div class="photo">
                 <div class="photo-header">
-                    <span class="photo-date"></span>
-                    <span class="photo-account-name"></span>
+                    <span class="photo-date">2020/12/12</span>
+                    <span class="photo-account-name">@ddddd</span>
                 </div>
                 <div class="photo-main">
-                    <img src="" alt="" class="photo">
+                    <img src="../img/ginzanonsen.jpeg" alt="" class="photo-img">
                 </div>
                 <div class="photo-foot">
-                    <span class="photo-comment"></span>
+                    <span class="photo-comment">ttttttttttttttttttttttttttttttttttttttttt</span>
                 </div>
             </div>
             
