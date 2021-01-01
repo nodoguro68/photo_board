@@ -33,17 +33,23 @@
     <main class="main">
         <div class="container">
 
-            <h2 class="page-title">新規投稿</h2>
-            
             <form method="POST" class="post-photo-form">
-                <div class="form-group">
-                    <input type="file" name="" id="" class="img">
+                <div class="form-header">
+                    <h2 class="form-title">新規投稿</h2>
                 </div>
-                <div class="form-group">
-                    <textarea name="comment" id="" class="comment"></textarea>
-                </div>
-                <div class="form-group-btn">
-                    <input type="submit" value="投稿" class="btn-submit">
+                <div class="form-main">
+                    <div class="form-group">
+                        <input type="file" name="" id="" class="img">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="comment" id="" class="comment" placeholder="コメントを入力"></textarea>
+                    </div>
+                    <div class="counter-area">
+                        <span class="count">0</span>/200
+                    </div>
+                    <div class="form-group-btn">
+                        <input type="submit" value="投稿" class="btn-submit">
+                    </div>
                 </div>
             </form>
 
