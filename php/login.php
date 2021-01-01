@@ -18,7 +18,7 @@
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
-                <h1></h1>
+                <h1>ロゴ</h1>
             </div>
 
             <nav class="header-nav">
