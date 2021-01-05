@@ -4,7 +4,7 @@ require_once 'config.php';
 
 if (!empty($_POST)) {
 
-    $email = $_POST['username'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $pass_re = $_POST['pass_re'];
@@ -37,7 +37,6 @@ if (!empty($_POST)) {
 
             if($stmt){
 
-                session_start();
                 $_SESSION['login_user'] = $dbh->lastInsertId();
     
                 header('Location: mypage.php');
@@ -70,23 +69,23 @@ require_once 'templete/header.php';
             <div class="form-main">
                 <div class="form-group">
                     <label class="form-label">アカウント名</label>
-                    <input type="text" name="username" value="<?php if (!empty($_POST['username'])) echo sanitize($_POST['username']); ?>" class="form-input" autofocus>
-                    <span class="err-msg"><?php if (!empty($err_msg['username'])) echo sanitize($err_msg['username']); ?></span>
+                    <input type="text" name="username" value="<?php echo post('username'); ?>" class="form-input" autofocus>
+                    <span class="err-msg"><?php echo err('username'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">メールアドレス</label>
-                    <input type="text" name="email" value="<?php if (!empty($_POST['email'])) echo sanitize($_POST['email']); ?>" class="form-input" autofocus>
-                    <span class="err-msg"><?php if (!empty($err_msg['email'])) echo sanitize($err_msg['email']); ?></span>
+                    <input type="text" name="email" value="<?php echo post('email'); ?>" class="form-input" autofocus>
+                    <span class="err-msg"><?php echo err('email'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
-                    <input type="password" name="pass" value="<?php if (!empty($_POST['pass'])) echo sanitize($_POST['pass']); ?>" class="form-input">
-                    <span class="err-msg"><?php if (!empty($err_msg['pass'])) echo sanitize($err_msg['pass']); ?></span>
+                    <input type="password" name="pass" value="<?php echo post('pass'); ?>" class="form-input">
+                    <span class="err-msg"><?php echo err('pass'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">パスワード（再入力）</label>
-                    <input type="password" name="pass_re" value="<?php if (!empty($_POST['pass_re'])) echo sanitize($_POST['pass_re']); ?>" class="form-input">
-                    <span class="err-msg"><?php if (!empty($err_msg['pass_re'])) echo sanitize($err_msg['pass_re']); ?></span>
+                    <input type="password" name="pass_re" value="<?php echo post('pass_re'); ?>" class="form-input">
+                    <span class="err-msg"><?php echo err('pass_re'); ?></span>
                 </div>
                 <div class="form-group-btn">
                     <input type="submit" value="登録" class="btn-submit">
