@@ -2,33 +2,17 @@
 
 
 
+
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ユーザー登録</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
 
-<body>
+<?php 
 
-    <header class="header">
-        <div class="header-container">
-            <div class="header-logo">
-                <h1><a href="index.php">ロゴ</a></h1>
-            </div>
+$page_title = 'ユーザー登録';
 
-            <nav class="header-nav">
-                <ul class="header-nav-menu">
-                    <li class="header-nav-menu-item"><a href="index.php" class="header-nav-menu-item-link">トップページ</a></li>
-                    <li class="header-nav-menu-item"><a href="login.php" class="header-nav-menu-item-link">ログイン</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+require_once 'templete/head.php';
+require_once 'templete/header.php';
+
+?>
 
     <main class="main">
         <div class="container">
@@ -41,18 +25,18 @@
                 <div class="form-main">
                     <div class="form-group">
                         <label class="form-label">メールアドレス</label>
-                        <input type="text" name="email" class="form-input">
-                        <span class="err-msg"></span>
+                        <input type="text" name="email" value="<?php if(!empty($_POST['email'])) echo sanitize($_POST['email']); ?>" class="form-input" autofocus>
+                        <span class="err-msg"><?php if(!empty($err_msg['email'])) echo sanitize($err_msg['email']); ?></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
-                        <input type="password" name="pass" class="form-input">
-                        <span class="err-msg"></span>
+                        <input type="password" name="pass" value="<?php if(!empty($_POST['pass'])) echo sanitize($_POST['pass']); ?>" class="form-input">
+                        <span class="err-msg"><?php if(!empty($err_msg['pass'])) echo sanitize($err_msg['pass']); ?></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label">パスワード（再入力）</label>
-                        <input type="password" name="pass_re" class="form-input">
-                        <span class="err-msg"></span>
+                        <input type="password" name="pass_re" value="<?php if(!empty($_POST['pass_re'])) echo sanitize($_POST['pass_re']); ?>" class="form-input">
+                        <span class="err-msg"><?php if(!empty($err_msg['pass_re'])) echo sanitize($err_msg['pass_re']); ?></span>
                     </div>
                     <div class="form-group-btn">
                         <input type="submit" value="登録" class="btn-submit">
