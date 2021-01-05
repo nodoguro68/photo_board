@@ -16,14 +16,35 @@ if (!empty($_POST)) {
 
     if(empty($err_msg)){
 
+        // アカウント名
         validationMaxLen($email,'username',255);
-        
-        validationMaxLen($email,'email',255);
 
+        // Eメール
+        validationMaxLen($email,'email',255);
+        validationEmail($email);
+        
+        // パスワード
+        validationPass($pass);
         validationMaxLen($pass,'pass',255);
         validationMinLen($pass,'pass');
         validationPassConf($pass,$pass_re);
 
+        if(empty($err_msg)){
+
+            $dbh = dbConnect();
+
+            $stmt = createUser($username,$email,$pass);
+
+            if($stmt){
+
+                session_start();
+                $_SESSION['login_user'] = $dbh->lastInsertId();
+    
+                header('Location: mypage.php');
+            } else{
+                $err_msg = ERR_CREATE_USER;
+            }
+        }
     }
 }
 
