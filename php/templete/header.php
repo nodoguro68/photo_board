@@ -10,7 +10,7 @@
 
                 <?php if(!empty($_SESSION['login_user'])) :?>
                     <li class="header-nav-menu-item"><a href="mypage.php" class="header-nav-menu-item-link">マイページ</a></li>
-                    <li class="header-nav-menu-item"><a href="" class="header-nav-menu-item-link">ログアウト</a></li>
+                    <li class="header-nav-menu-item"><a href="logout.php" class="header-nav-menu-item-link">ログアウト</a></li>
                 <?php elseif(empty($_SESSION['login_user']) && $page_title === 'ログイン'): ?>
                     <li class="header-nav-menu-item"><a href="signup.php" class="header-nav-menu-item-link">ユーザー登録</a></li>
                 <?php else: ?>
