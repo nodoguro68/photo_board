@@ -53,6 +53,7 @@ define('ERR_PASS_CONF','パスワードの再入力が違います');
 define('ERR_PASS','半角英数字で入力してください');
 define('ERR_CREATE_USER','ユーザー登録に失敗しました');
 define('ERR_DB_CONNECT','データベース接続に失敗しました');
+define('ERR_LOGIN','ログインに失敗しました');
 
 // バリデーション
 function validationEmpty($key){
@@ -137,6 +138,59 @@ function createUser($username,$email,$pass){
     } catch(Exception $e){
         echo ERR_DB_CONNECT.$e->getMessage();
     }
+}
+function getUserByEmail($email){
+
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT * FROM users WHERE email = :email AND delete_flg = 0';
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(array(
+            ':email' => $email,
+        ));
+
+        $user_data = $stmt->fetch();
+
+        return $user_data;
+
+    } catch(Exception $e){
+        return false;
+    }
+}
+function login($email,$pass){
+
+    $user_data = getUserByEmail($email);
+
+    if(password_verify($pass,$user_data['password'])){
+
+        session_regenerate_id(true);
+        $_SESSION['login_user'] = $user_data;
+        $result = true;
+        return $result;
+    }
+
+}
+function checkLogin(){
+    if(empty($_SESSION['login_user'])){
+        header('Location: login.php');
+    }
+}
+function logout(){
+    $_SESSION = array();
+    session_destroy();
+}
+
+// ワンタイムトークン
+function setToken(){
+
+    // session_start();
+    $csrf_token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $csrf_token;
+
+    return $csrf_token;
 }
 
 
