@@ -4,10 +4,18 @@ require_once 'config.php';
 
 if (!empty($_POST)) {
 
+    $token = filter_input(INPUT_POST,'csrf_token');
+    if(!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']){
+        exit('不正なリクエスト');
+    }
+
+    unset($_SESSION['csrf_token']);
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $pass_re = $_POST['pass_re'];
+
 
     validationEmpty('username');
     validationEmpty('email');
@@ -87,6 +95,7 @@ require_once 'templete/header.php';
                     <input type="password" name="pass_re" value="<?php echo post('pass_re'); ?>" class="form-input">
                     <span class="err-msg"><?php echo err('pass_re'); ?></span>
                 </div>
+                <input type="hidden" name="csrf_token" value="<?php echo sanitize(setToken()) ?>">
                 <div class="form-group-btn">
                     <input type="submit" value="登録" class="btn-submit">
                 </div>
