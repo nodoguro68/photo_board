@@ -23,7 +23,7 @@ if(!empty($_POST) && !empty($_FILES)){
     if(empty($err_msg)){
         
         uploadFile($photo_tmp_path,$save_path,$save_file_name);
-        createPost($_SESSION['login_user']['id'],$photo_file_name,$save_path,$comment);
+        createPost($_SESSION['login_user']['id'],$save_file_name,$save_path,$comment);
 
         header('Location: index.php');
     }
