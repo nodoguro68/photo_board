@@ -2,6 +2,7 @@
 
 require_once 'config.php';
 
+$posts = getMyPosts($_SESSION['login_user']['id']);
 
 ?>
 
@@ -33,19 +34,24 @@ require_once 'templete/header.php';
                 
                 
                 <div class="card-wrap">
-                    <div class="card">
-                        <a href="" class="card-date">
-
-                        </a>
-                        <a href="" class="card-link">
-                            <div class="card-head">
-                                <img src="../img/arashiyama.jpg" alt="" class="card-img">
-                            </div>
-                            <div class="card-foot">
-                                <span class="card-comment"></span>
-                            </div>
-                        </a>
-                    </div>
+                <?php if(!empty($posts)): ?>
+                    <?php foreach($posts as $post): ?>
+                        <div class="card">
+                            <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-date">
+                                <?php echo sanitize($post['created_at']); ?>
+                            </a>
+                            <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-link">
+                                <div class="card-head">
+                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="" class="card-img">
+                                </div>
+                                <div class="card-foot">
+                                    <span class="card-account"></span>
+                                    <span class="card-comment"><?php echo sanitize($post['comment']); ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             
                 <div class="post-photo-link">
