@@ -2,6 +2,7 @@
 
 require_once 'config.php';
 
+$posts = getPosts();
 
 ?>
 
@@ -23,20 +24,24 @@ require_once 'templete/header.php';
                 </div>
                 
                 <div class="card-wrap">
-                    <div class="card">
-                        <a href="" class="card-date">
-                            
-                        </a>
-                        <a href="photo_detail.php" class="card-link">
-                            <div class="card-head">
-                                <img src="../img/nabegataki.jpg" alt="" class="card-img">
-                            </div>
-                            <div class="card-foot">
-                                <span class="card-account"></span>
-                                <h3 class="card-title"></h3>
-                            </div>
-                        </a>
-                    </div>
+                    <?php if(!empty($posts)): ?>
+                    <?php foreach($posts as $post): ?>
+                        <div class="card">
+                            <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-date">
+                                <?php echo sanitize($post['created_at']); ?>
+                            </a>
+                            <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-link">
+                                <div class="card-head">
+                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="" class="card-img">
+                                </div>
+                                <div class="card-foot">
+                                    <span class="card-account"></span>
+                                    <h3 class="card-title"><?php echo sanitize($post['comment']); ?></h3>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
     
                 <div class="post-photo-link">
