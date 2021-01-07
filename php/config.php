@@ -160,18 +160,17 @@ function getMyPosts($user_id){
 }
 
 // データ取得 photo_detail.php
-function getPostDetail($id,$user_id){
+function getPostDetail($id){
 
     try{
 
         $dbh = dbConnect();
 
-        $sql = 'SELECT * FROM posts WHERE id = :id AND user_id = :user_id AND delete_flg = 0';
+        $sql = 'SELECT * FROM posts WHERE id = :id AND delete_flg = 0';
 
         $stmt = $dbh->prepare($sql);
         $stmt->execute(array(
             ':id' => $id,
-            ':user_id' => $user_id,
         ));
 
         $user_data = $stmt->fetch();
