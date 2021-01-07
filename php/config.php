@@ -54,6 +54,10 @@ define('ERR_PASS','半角英数字で入力してください');
 define('ERR_CREATE_USER','ユーザー登録に失敗しました');
 define('ERR_DB_CONNECT','データベース接続に失敗しました');
 define('ERR_LOGIN','ログインに失敗しました');
+define('ERR_FILE_SIZE','ファイルサイズは1MB未満にしてください');
+define('ERR_FILE_EXT','画像ファイルを添付してください');
+define('ERR_IS_SELECTED','ファイルが選択されていません');
+define('ERR_SAVE_FILE','ファイルを保存できませんでした');
 
 // バリデーション
 function validationEmpty($key){
@@ -93,21 +97,90 @@ function validationPassConf($pass,$pass_re){
     }
 }
 
+function validationFileSize($file_size,$file_err){
+    global $err_msg;
+    if($file_size > 1048576 || $file_err === 2){
+        $err_msg['photo'] = ERR_FILE_SIZE;
+    }
+}
+function validationFileExt($file_name){
+    global $err_msg;
+    $allow_ext = array('jpg','jpeg','png');
+    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+
+    if(!in_array(strtolower($file_ext),$allow_ext)){
+        $err_msg['photo'] = ERR_FILE_EXT;
+    }
+}
+
+
 
 
 // データ取得 index.php
 function getPosts(){
 
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT * FROM posts WHERE delete_flg = 0';
+
+        $stmt = $dbh->query($sql);
+
+        $user_data = $stmt->fetchAll();
+
+        return $user_data;
+
+    } catch(Exception $e){
+        return false;
+    }
 }
 
 // データ取得 mypage.php
-function getMyPosts(){
+function getMyPosts($user_id){
 
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT * FROM posts WHERE user_id = :user_id AND delete_flg = 0';
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(array(
+            ':user_id' => $user_id,
+        ));
+
+        $user_data = $stmt->fetchAll();
+
+        return $user_data;
+
+    } catch(Exception $e){
+        return false;
+    }
 }
 
 // データ取得 photo_detail.php
-function getPhotoDetail(){
+function getPostDetail($id,$user_id){
 
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'SELECT * FROM posts WHERE id = :id AND user_id = :user_id AND delete_flg = 0';
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(array(
+            ':id' => $id,
+            ':user_id' => $user_id,
+        ));
+
+        $user_data = $stmt->fetch();
+
+        return $user_data;
+
+    } catch(Exception $e){
+        return false;
+    }
 }
 
 // サニタイズ
@@ -181,6 +254,7 @@ function checkLogin(){
 function logout(){
     $_SESSION = array();
     session_destroy();
+    header('Location: login.php');
 }
 
 // ワンタイムトークン
@@ -206,5 +280,43 @@ function err($key){
     global $err_msg;
     if(!empty($err_msg[$key])){
         return sanitize($err_msg[$key]);
+    }
+}
+
+function uploadFile($tmp_path,$save_path,$save_file_name){
+    if(is_uploaded_file($tmp_path)){
+        if(move_uploaded_file($tmp_path,$save_path)){
+            echo $save_file_name.'をアップしました';
+        } else {
+            $err_msg['photo'] = ERR_SAVE_FILE;
+        }
+    } else {
+        $err_msg['photo'] = ERR_IS_SELECTED;
+    }
+}
+function createPost($user_id,$img_name,$img_path,$comment){
+
+    try{
+
+        $dbh = dbConnect();
+
+        $sql = 'INSERT posts SET user_id = :user_id, img_name = :img_name, img_path = :img_path, comment = :comment ,created_at = :created_at';
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute(array(
+            ':user_id' => $user_id,
+            ':img_name' => $img_name,
+            ':img_path' => $img_path,
+            ':comment' => $comment,
+            ':created_at' => date('Y-m-d H:i:s'),
+        ));
+
+        if($stmt){
+            return $stmt;
+        }
+
+
+    } catch(Exception $e){
+        echo ERR_DB_CONNECT.$e->getMessage();
     }
 }
