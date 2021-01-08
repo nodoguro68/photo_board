@@ -50,15 +50,15 @@ require_once 'templete/header.php';
                 <div class="form-main">
                     <div class="form-group">
                         <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
-                        <input type="file" name="photo" class="img">
+                        <input type="file" name="photo" class="img" id="imgFile">
                         <span class="err-msg"><?php echo err('photo'); ?></span>
                     </div>
                     <div class="form-group">
-                        <textarea name="comment" id="" class="comment" placeholder="コメントを入力"><?php echo post('comment'); ?></textarea>
+                        <textarea name="comment" id="comment" class="comment" placeholder="コメントを入力"><?php echo post('comment'); ?></textarea>
                         <span class="err-msg"><?php echo err('comment'); ?></span>
                     </div>
                     <div class="counter-area">
-                        <span class="count">0</span>/200
+                        <span class="count" id="counter">0</span>/200
                     </div>
                     <div class="form-group-btn">
                         <input type="submit" name="post" value="投稿" class="btn-submit">
@@ -72,6 +72,6 @@ require_once 'templete/header.php';
 <?php require_once 'templete/footer.php'; ?>
     
     <script src="../js/main.js"></script>
-    <script src="../js/form.js"></script>
+    <script src="../js/text_counter.js"></script>
 </body>
 </html>
