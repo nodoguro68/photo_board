@@ -319,3 +319,8 @@ function createPost($user_id,$img_name,$img_path,$comment){
         echo ERR_DB_CONNECT.$e->getMessage();
     }
 }
+
+function explodeDatetime($data){
+    $result = explode(' ',$data);
+    return $result[0];
+}

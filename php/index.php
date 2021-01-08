@@ -28,7 +28,7 @@ require_once 'templete/header.php';
                     <?php foreach($posts as $post): ?>
                         <div class="card">
                             <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-date">
-                                <?php echo sanitize($post['created_at']); ?>
+                                <?php echo sanitize(explodeDatetime($post['created_at'])); ?>
                             </a>
                             <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-link">
                                 <div class="card-head">
