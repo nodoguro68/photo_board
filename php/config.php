@@ -123,7 +123,7 @@ function getPosts(){
 
         $dbh = dbConnect();
 
-        $sql = 'SELECT * FROM posts WHERE delete_flg = 0';
+        $sql = 'SELECT * FROM posts WHERE delete_flg = 0 ORDER BY created_at DESC';
 
         $stmt = $dbh->query($sql);
 
@@ -143,7 +143,7 @@ function getMyPosts($user_id){
 
         $dbh = dbConnect();
 
-        $sql = 'SELECT * FROM posts WHERE user_id = :user_id AND delete_flg = 0';
+        $sql = 'SELECT * FROM posts WHERE user_id = :user_id AND delete_flg = 0 ORDER BY created_at DESC';
 
         $stmt = $dbh->prepare($sql);
         $stmt->execute(array(
