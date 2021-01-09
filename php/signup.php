@@ -39,15 +39,12 @@ if (!empty($_POST)) {
 
         if(empty($err_msg)){
 
-            $dbh = dbConnect();
-
             $stmt = createUser($username,$email,$pass);
 
             if($stmt){
-
-                $_SESSION['login_user'] = $dbh->lastInsertId();
     
                 header('Location: mypage.php');
+
             } else{
                 $err_msg = ERR_CREATE_USER;
             }
@@ -77,25 +74,25 @@ require_once 'templete/header.php';
             <div class="form-main">
                 <div class="form-group">
                     <label class="form-label">アカウント名</label>
-                    <input type="text" name="username" value="<?php echo post('username'); ?>" class="form-input" autofocus>
+                    <input type="text" name="username" value="<?php echo post('username'); ?>" class="form-input" id="username" autofocus>
                     <span class="err-msg"><?php echo err('username'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">メールアドレス</label>
-                    <input type="text" name="email" value="<?php echo post('email'); ?>" class="form-input" autofocus>
+                    <input type="text" name="email" value="<?php echo post('email'); ?>" class="form-input" id="email" autofocus>
                     <span class="err-msg"><?php echo err('email'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
-                    <input type="password" name="pass" value="<?php echo post('pass'); ?>" class="form-input">
+                    <input type="password" name="pass" value="<?php echo post('pass'); ?>" class="form-input" id="pass">
                     <span class="err-msg"><?php echo err('pass'); ?></span>
                 </div>
                 <div class="form-group">
                     <label class="form-label">パスワード（再入力）</label>
-                    <input type="password" name="pass_re" value="<?php echo post('pass_re'); ?>" class="form-input">
+                    <input type="password" name="pass_re" value="<?php echo post('pass_re'); ?>" class="form-input" id="pass_re">
                     <span class="err-msg"><?php echo err('pass_re'); ?></span>
                 </div>
-                <input type="hidden" name="csrf_token" value="<?php echo sanitize(setToken()) ?>">
+                <input type="hidden" name="csrf_token" value="<?php echo sanitize(setToken()); ?>">
                 <div class="form-group-btn">
                     <input type="submit" value="登録" class="btn-submit">
                 </div>
