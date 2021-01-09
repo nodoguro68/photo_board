@@ -205,6 +205,8 @@ function createUser($username,$email,$pass){
             ':created_at' => date('Y-m-d H:i:s'),
         ));
 
+        $_SESSION['user_id'] = $dbh->lastInsertId();
+
         return $stmt;
 
     } catch(Exception $e){
@@ -239,14 +241,14 @@ function login($email,$pass){
     if(password_verify($pass,$user_data['password'])){
 
         session_regenerate_id(true);
-        $_SESSION['login_user'] = $user_data;
+        $_SESSION['user_id'] = $user_data['id'];
         $result = true;
         return $result;
     }
 
 }
 function checkLogin(){
-    if(empty($_SESSION['login_user'])){
+    if(empty($_SESSION['user_id'])){
         header('Location: login.php');
     }
 }
