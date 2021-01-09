@@ -1,6 +1,8 @@
 <?php 
 
 require_once 'config.php';
+checkLogin();
+
 
 if(!empty($_POST) && !empty($_FILES)){
 
@@ -23,7 +25,7 @@ if(!empty($_POST) && !empty($_FILES)){
     if(empty($err_msg)){
         
         uploadFile($photo_tmp_path,$save_path,$save_file_name);
-        createPost($_SESSION['login_user']['id'],$save_file_name,$save_path,$comment);
+        createPost($_SESSION['user_id'],$save_file_name,$save_path,$comment);
 
         header('Location: index.php');
     }
@@ -48,9 +50,11 @@ require_once 'templete/header.php';
                     <h2 class="form-title">新規投稿</h2>
                 </div>
                 <div class="form-main">
-                    <div class="form-group">
+                    <div class="form-group-img">
+                        <label class="form-label">画像を選択</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
-                        <input type="file" name="photo" class="img" id="imgFile">
+                        <input type="file" name="photo" class="img-file" id="imgFile">
+                        <img src="" class="preview" id="preview" alt="プレビュー画像">
                         <span class="err-msg"><?php echo err('photo'); ?></span>
                     </div>
                     <div class="form-group">
@@ -71,7 +75,8 @@ require_once 'templete/header.php';
 
 <?php require_once 'templete/footer.php'; ?>
     
-    <script src="../js/main.js"></script>
+    <script src="../js/validation.js"></script>
     <script src="../js/text_counter.js"></script>
+    <script src="../js/img_preview.js"></script>
 </body>
 </html>

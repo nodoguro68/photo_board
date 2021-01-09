@@ -1,8 +1,9 @@
 <?php 
 
 require_once 'config.php';
+checkLogin();
 
-$posts = getMyPosts($_SESSION['login_user']['id']);
+$posts = getMyPosts($_SESSION['user_id']);
 
 ?>
 
@@ -42,11 +43,11 @@ require_once 'templete/header.php';
                             </a>
                             <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-link">
                                 <div class="card-head">
-                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="" class="card-img">
+                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="投稿画像" class="card-img">
                                 </div>
                                 <div class="card-foot">
                                     <span class="card-account"></span>
-                                    <span class="card-comment"><?php echo sanitize($post['comment']); ?></span>
+                                    <h3 class="card-title"><?php echo sanitize($post['comment']); ?></h3>
                                 </div>
                             </a>
                         </div>

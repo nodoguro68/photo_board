@@ -2,7 +2,9 @@
 
 require_once 'config.php';
 
-$post = getPostDetail($_GET['post_id'],$_SESSION['login_user']['id']);
+checkLogin();
+
+$post = getPostDetail($_GET['post_id'],$_SESSION['user_id']);
 
 
 ?>
@@ -19,15 +21,16 @@ require_once 'templete/header.php';
     <main class="main">
         <div class="container">
 
-            <a href="index.php">＞戻る</a>
             
             <div class="photo">
+                <a href="index.php" class="return-page">＞戻る</a>
+
                 <div class="photo-header">
                     <span class="photo-date"><?php echo sanitize($post['created_at']); ?></span>
                     <span class="photo-account-name"></span>
                 </div>
                 <div class="photo-main">
-                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="" class="photo-img">
+                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="投稿画像" class="photo-img">
                 </div>
                 <div class="photo-foot">
                     <span class="photo-comment"><?php echo sanitize($post['comment']); ?></span>
