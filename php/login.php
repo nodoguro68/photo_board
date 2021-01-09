@@ -62,12 +62,12 @@ require_once 'templete/header.php';
                 <div class="form-main">
                     <div class="form-group">
                         <label class="form-label">メールアドレス</label>
-                        <input type="text" name="email" value="<?php echo post('email'); ?>" class="form-input" autofocus>
+                        <input type="text" name="email" value="<?php echo post('email'); ?>" class="form-input" id="email" autofocus>
                         <span class="err-msg"><?php echo err('email'); ?></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label">パスワード<span class="note">*半角英数字8文字以上で入力してください</span></label>
-                        <input type="password" name="pass" value="<?php echo post('pass'); ?>" class="form-input">
+                        <input type="password" name="pass" value="<?php echo post('pass'); ?>" class="form-input" id="pass">
                         <span class="err-msg"><?php echo err('pass'); ?></span>
                     </div>
                     <div class="form-group-btn">
