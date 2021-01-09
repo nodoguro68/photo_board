@@ -32,7 +32,7 @@ require_once 'templete/header.php';
                             </a>
                             <a href="photo_detail.php?post_id=<?php echo sanitize($post['id']); ?>" class="card-link">
                                 <div class="card-head">
-                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="" class="card-img">
+                                    <img src="../uploads/<?php echo sanitize($post['img_name']); ?>" alt="投稿画像" class="card-img">
                                 </div>
                                 <div class="card-foot">
                                     <span class="card-account"></span>
@@ -56,6 +56,5 @@ require_once 'templete/header.php';
     <?php require_once 'templete/footer.php'; ?>
     
     <script src="../js/main.js"></script>
-    <script src="../js/form.js"></script>
 </body>
 </html>
