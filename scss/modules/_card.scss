@@ -45,5 +45,11 @@
             color: blue;
             font-size: 12px;
         }
+
+        .card-title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
     }
 }
