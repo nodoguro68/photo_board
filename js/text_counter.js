@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded',function(){
 
     // テキストエリアのDOMを取得
-    var countText = document.getElementById('countText');
+    var countText = document.getElementById('comment');
     
     // キーが離れたとき
     countText.addEventListener('keyup',function(){
@@ -15,6 +15,10 @@ window.addEventListener('DOMContentLoaded',function(){
 
         // カウントを変更する
         counterNum.innerText = count;
+
+        if(count > 200){
+            counterNum.classList.add('err-count');
+        }
         
     });
 
